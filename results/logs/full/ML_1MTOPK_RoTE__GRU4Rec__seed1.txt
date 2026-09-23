@@ -1,0 +1,55 @@
+INFO:root:Namespace(model_name='GRU4Rec', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2026-09-24 00:02:21 ---------------------------------------------
+INFO:root:
+=====================================
+ Arguments          | Values         
+=====================================
+ batch_size         | 256           
+ data_appendix      |               
+ dataset            | ML_1MTOPK_RoTE
+ dropout            | 0             
+ early_stop         | 3             
+ emb_size           | 16            
+ epoch              | 8             
+ eval_batch_size    | 256           
+ gpu                | -1            
+ hidden_size        | 16            
+ history_max        | 20            
+ l2                 | 0.0           
+ lr                 | 0.001         
+ main_metric        | NDCG@10       
+ num_neg            | 1             
+ num_workers        | 0             
+ optimizer          | Adam          
+ random_seed        | 1             
+ save_final_results | 0             
+ test_all           | 0             
+ topk               | 5,10          
+=====================================
+INFO:root:Device: cpu
+INFO:root:Load corpus from data/ML_1MTOPK_RoTE\SeqReader.pkl
+INFO:root:#params: 51920
+INFO:root:GRU4Rec(
+  (i_embeddings): Embedding(3126, 16)
+  (rnn): GRU(16, 16, batch_first=True)
+  (out): Linear(in_features=16, out_features=16, bias=True)
+)
+INFO:root:Test Before Training: (HR@5:0.0431,NDCG@5:0.0242,HR@10:0.0915,NDCG@10:0.0397)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.3450 [83.6 s]	dev=(HR@10:0.4528,NDCG@10:0.2447) [0.4 s] *
+INFO:root:Epoch 2     loss=0.3185 [80.3 s]	dev=(HR@10:0.5075,NDCG@10:0.2771) [0.4 s] *
+INFO:root:Epoch 3     loss=0.2619 [78.8 s]	dev=(HR@10:0.5550,NDCG@10:0.3051) [0.3 s] *
+INFO:root:Epoch 4     loss=0.2428 [78.9 s]	dev=(HR@10:0.5607,NDCG@10:0.3119) [0.4 s] *
+INFO:root:Epoch 5     loss=0.2370 [78.3 s]	dev=(HR@10:0.5827,NDCG@10:0.3285) [0.3 s] *
+INFO:root:Epoch 6     loss=0.2258 [72.4 s]	dev=(HR@10:0.6122,NDCG@10:0.3520) [0.3 s] *
+INFO:root:Epoch 7     loss=0.2077 [71.1 s]	dev=(HR@10:0.6455,NDCG@10:0.3808) [0.3 s] *
+INFO:root:Epoch 8     loss=0.1921 [70.8 s]	dev=(HR@10:0.6661,NDCG@10:0.3962) [0.4 s] *
+INFO:root:
+Best Iter(dev)=    8	 dev=(HR@10:0.6661,NDCG@10:0.3962) [617.1 s] 
+INFO:root:Load model from C:/Users/Don.Penguin/Desktop/学习资料/机器学习/理论大作业/ReChorus/results/checkpoints/full/ML_1MTOPK_RoTE__GRU4Rec__seed1.pt
+INFO:root:
+Dev  After Training: (HR@5:0.4940,NDCG@5:0.3406,HR@10:0.6661,NDCG@10:0.3962)
+INFO:root:
+Test After Training: (HR@5:0.4720,NDCG@5:0.3199,HR@10:0.6397,NDCG@10:0.3742)
+INFO:root:
+--------------------------------------------- END: 2026-09-24 00:12:41 ---------------------------------------------

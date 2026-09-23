@@ -1,0 +1,55 @@
+INFO:root:Namespace(model_name='GRU4Rec', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2026-09-23 23:43:33 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_RoTE_99Un...
+ dropout            | 0                   
+ early_stop         | 3                   
+ emb_size           | 16                  
+ epoch              | 8                   
+ eval_batch_size    | 256                 
+ gpu                | -1                  
+ hidden_size        | 16                  
+ history_max        | 20                  
+ l2                 | 0.0                 
+ lr                 | 0.001               
+ main_metric        | NDCG@10             
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 1                   
+ save_final_results | 0                   
+ test_all           | 0                   
+ topk               | 5,10                
+===========================================
+INFO:root:Device: cpu
+INFO:root:Load corpus from data/Grocery_RoTE_99Unique\SeqReader.pkl
+INFO:root:#params: 141328
+INFO:root:GRU4Rec(
+  (i_embeddings): Embedding(8714, 16)
+  (rnn): GRU(16, 16, batch_first=True)
+  (out): Linear(in_features=16, out_features=16, bias=True)
+)
+INFO:root:Test Before Training: (HR@5:0.0477,NDCG@5:0.0269,HR@10:0.0986,NDCG@10:0.0431)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.5130 [9.3 s]	dev=(HR@10:0.3821,NDCG@10:0.2022) [0.4 s] *
+INFO:root:Epoch 2     loss=0.4325 [8.3 s]	dev=(HR@10:0.3908,NDCG@10:0.2050) [0.4 s] *
+INFO:root:Epoch 3     loss=0.4237 [8.2 s]	dev=(HR@10:0.3943,NDCG@10:0.2065) [0.4 s] *
+INFO:root:Epoch 4     loss=0.4195 [8.2 s]	dev=(HR@10:0.3900,NDCG@10:0.2053) [0.4 s]
+INFO:root:Epoch 5     loss=0.4125 [8.3 s]	dev=(HR@10:0.3985,NDCG@10:0.2159) [0.5 s] *
+INFO:root:Epoch 6     loss=0.4014 [8.2 s]	dev=(HR@10:0.4488,NDCG@10:0.2513) [0.4 s] *
+INFO:root:Epoch 7     loss=0.3821 [8.1 s]	dev=(HR@10:0.4596,NDCG@10:0.2606) [0.4 s] *
+INFO:root:Epoch 8     loss=0.3704 [8.5 s]	dev=(HR@10:0.4694,NDCG@10:0.2666) [0.5 s] *
+INFO:root:
+Best Iter(dev)=    8	 dev=(HR@10:0.4694,NDCG@10:0.2666) [70.4 s] 
+INFO:root:Load model from C:/Users/Don.Penguin/Desktop/学习资料/机器学习/理论大作业/ReChorus/results/checkpoints/full/Grocery_RoTE_99Unique__GRU4Rec__seed1.pt
+INFO:root:
+Dev  After Training: (HR@5:0.3370,NDCG@5:0.2237,HR@10:0.4694,NDCG@10:0.2666)
+INFO:root:
+Test After Training: (HR@5:0.2863,NDCG@5:0.1856,HR@10:0.4205,NDCG@10:0.2291)
+INFO:root:
+--------------------------------------------- END: 2026-09-23 23:44:46 ---------------------------------------------

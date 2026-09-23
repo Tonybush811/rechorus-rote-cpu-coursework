@@ -1,0 +1,69 @@
+INFO:root:Namespace(model_name='RoTE', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2026-09-23 23:31:02 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_RoTE_99Un...
+ dropout            | 0                   
+ early_stop         | 3                   
+ emb_size           | 16                  
+ epoch              | 8                   
+ eval_batch_size    | 256                 
+ gpu                | -1                  
+ history_max        | 20                  
+ l2                 | 0.0                 
+ lr                 | 0.001               
+ main_metric        | NDCG@10             
+ num_heads          | 2                   
+ num_layers         | 1                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 0                   
+ test_all           | 0                   
+ topk               | 5,10                
+===========================================
+INFO:root:Device: cpu
+INFO:root:Load corpus from data/Grocery_RoTE_99Unique\SeqReader.pkl
+INFO:root:#params: 140848
+INFO:root:RoTE(
+  (items): Embedding(8714, 16, padding_idx=0)
+  (blocks): ModuleList(
+    (0): RoTELayer(
+      (attention): RoTEAttention(
+        (query): Linear(in_features=16, out_features=16, bias=True)
+        (key): Linear(in_features=16, out_features=16, bias=True)
+        (value): Linear(in_features=16, out_features=16, bias=True)
+      )
+      (norm1): LayerNorm((16,), eps=1e-05, elementwise_affine=True)
+      (norm2): LayerNorm((16,), eps=1e-05, elementwise_affine=True)
+      (dropout1): Dropout(p=0, inplace=False)
+      (dropout2): Dropout(p=0, inplace=False)
+      (ff1): Linear(in_features=16, out_features=16, bias=True)
+      (ff2): Linear(in_features=16, out_features=16, bias=True)
+    )
+  )
+)
+INFO:root:Test Before Training: (HR@5:0.0514,NDCG@5:0.0296,HR@10:0.1009,NDCG@10:0.0454)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.5282 [15.3 s]	dev=(HR@10:0.3991,NDCG@10:0.2177) [1.0 s] *
+INFO:root:Epoch 2     loss=0.4150 [15.2 s]	dev=(HR@10:0.4527,NDCG@10:0.2549) [1.2 s] *
+INFO:root:Epoch 3     loss=0.3753 [16.2 s]	dev=(HR@10:0.4680,NDCG@10:0.2627) [1.2 s] *
+INFO:root:Epoch 4     loss=0.3419 [15.6 s]	dev=(HR@10:0.4767,NDCG@10:0.2785) [1.1 s] *
+INFO:root:Epoch 5     loss=0.3017 [14.8 s]	dev=(HR@10:0.4827,NDCG@10:0.2907) [1.1 s] *
+INFO:root:Epoch 6     loss=0.2644 [15.2 s]	dev=(HR@10:0.4923,NDCG@10:0.3051) [1.1 s] *
+INFO:root:Epoch 7     loss=0.2359 [15.1 s]	dev=(HR@10:0.4930,NDCG@10:0.3094) [1.1 s] *
+INFO:root:Epoch 8     loss=0.2109 [15.4 s]	dev=(HR@10:0.4949,NDCG@10:0.3146) [1.1 s] *
+INFO:root:
+Best Iter(dev)=    8	 dev=(HR@10:0.4949,NDCG@10:0.3146) [131.7 s] 
+INFO:root:Load model from C:/Users/Don.Penguin/Desktop/学习资料/机器学习/理论大作业/ReChorus/results/checkpoints/full/Grocery_RoTE_99Unique__RoTE__seed0.pt
+INFO:root:
+Dev  After Training: (HR@5:0.3885,NDCG@5:0.2801,HR@10:0.4949,NDCG@10:0.3146)
+INFO:root:
+Test After Training: (HR@5:0.3419,NDCG@5:0.2402,HR@10:0.4450,NDCG@10:0.2736)
+INFO:root:
+--------------------------------------------- END: 2026-09-23 23:33:17 ---------------------------------------------

@@ -1,0 +1,43 @@
+{
+  "dataset": "ML_1MTOPK_RoTE",
+  "splits": {
+    "train": {
+      "rows": 562308,
+      "users": 6034,
+      "items": 3125,
+      "min_time": 956703932,
+      "max_time": 1046454443
+    },
+    "dev": {
+      "rows": 6034,
+      "users": 6034,
+      "items": 1768,
+      "min_time": 956712388,
+      "max_time": 1046454548,
+      "negative_counts": [
+        99
+      ],
+      "duplicate_negative_rows": 0,
+      "previously_clicked_negative_rows": 0,
+      "out_of_range_negative_rows": 0
+    },
+    "test": {
+      "rows": 6034,
+      "users": 6034,
+      "items": 1798,
+      "min_time": 956712388,
+      "max_time": 1046454590,
+      "negative_counts": [
+        99
+      ],
+      "duplicate_negative_rows": 0,
+      "previously_clicked_negative_rows": 0,
+      "out_of_range_negative_rows": 0
+    }
+  },
+  "users": 6034,
+  "items": 3125,
+  "heldout_items_without_training": 0,
+  "users_with_complete_sequence": 6034,
+  "temporal_order_violations": 0
+}

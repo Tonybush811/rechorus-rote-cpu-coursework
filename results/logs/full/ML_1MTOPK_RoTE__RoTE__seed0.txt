@@ -1,0 +1,69 @@
+INFO:root:Namespace(model_name='RoTE', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2026-09-23 23:46:07 ---------------------------------------------
+INFO:root:
+=====================================
+ Arguments          | Values         
+=====================================
+ batch_size         | 256           
+ data_appendix      |               
+ dataset            | ML_1MTOPK_RoTE
+ dropout            | 0             
+ early_stop         | 3             
+ emb_size           | 16            
+ epoch              | 8             
+ eval_batch_size    | 256           
+ gpu                | -1            
+ history_max        | 20            
+ l2                 | 0.0           
+ lr                 | 0.001         
+ main_metric        | NDCG@10       
+ num_heads          | 2             
+ num_layers         | 1             
+ num_neg            | 1             
+ num_workers        | 0             
+ optimizer          | Adam          
+ random_seed        | 0             
+ save_final_results | 0             
+ test_all           | 0             
+ topk               | 5,10          
+=====================================
+INFO:root:Device: cpu
+INFO:root:Load corpus from data/ML_1MTOPK_RoTE\SeqReader.pkl
+INFO:root:#params: 51440
+INFO:root:RoTE(
+  (items): Embedding(3126, 16, padding_idx=0)
+  (blocks): ModuleList(
+    (0): RoTELayer(
+      (attention): RoTEAttention(
+        (query): Linear(in_features=16, out_features=16, bias=True)
+        (key): Linear(in_features=16, out_features=16, bias=True)
+        (value): Linear(in_features=16, out_features=16, bias=True)
+      )
+      (norm1): LayerNorm((16,), eps=1e-05, elementwise_affine=True)
+      (norm2): LayerNorm((16,), eps=1e-05, elementwise_affine=True)
+      (dropout1): Dropout(p=0, inplace=False)
+      (dropout2): Dropout(p=0, inplace=False)
+      (ff1): Linear(in_features=16, out_features=16, bias=True)
+      (ff2): Linear(in_features=16, out_features=16, bias=True)
+    )
+  )
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0299,HR@10:0.1054,NDCG@10:0.0477)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.3208 [78.7 s]	dev=(HR@10:0.5660,NDCG@10:0.3161) [0.4 s] *
+INFO:root:Epoch 2     loss=0.2090 [76.0 s]	dev=(HR@10:0.7037,NDCG@10:0.4343) [0.4 s] *
+INFO:root:Epoch 3     loss=0.1690 [77.4 s]	dev=(HR@10:0.7284,NDCG@10:0.4548) [0.4 s] *
+INFO:root:Epoch 4     loss=0.1547 [84.2 s]	dev=(HR@10:0.7436,NDCG@10:0.4722) [0.5 s] *
+INFO:root:Epoch 5     loss=0.1465 [94.4 s]	dev=(HR@10:0.7549,NDCG@10:0.4862) [0.5 s] *
+INFO:root:Epoch 6     loss=0.1420 [94.8 s]	dev=(HR@10:0.7580,NDCG@10:0.4891) [0.6 s] *
+INFO:root:Epoch 7     loss=0.1388 [95.2 s]	dev=(HR@10:0.7645,NDCG@10:0.4906) [0.5 s] *
+INFO:root:Epoch 8     loss=0.1340 [95.8 s]	dev=(HR@10:0.7630,NDCG@10:0.4915) [0.5 s] *
+INFO:root:
+Best Iter(dev)=    8	 dev=(HR@10:0.7630,NDCG@10:0.4915) [700.2 s] 
+INFO:root:Load model from C:/Users/Don.Penguin/Desktop/学习资料/机器学习/理论大作业/ReChorus/results/checkpoints/full/ML_1MTOPK_RoTE__RoTE__seed0.pt
+INFO:root:
+Dev  After Training: (HR@5:0.6168,NDCG@5:0.4440,HR@10:0.7630,NDCG@10:0.4915)
+INFO:root:
+Test After Training: (HR@5:0.5888,NDCG@5:0.4216,HR@10:0.7353,NDCG@10:0.4691)
+INFO:root:
+--------------------------------------------- END: 2026-09-23 23:57:50 ---------------------------------------------

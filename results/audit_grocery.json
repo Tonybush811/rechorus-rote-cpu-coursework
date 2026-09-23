@@ -1,0 +1,43 @@
+{
+  "dataset": "Grocery_RoTE_99Unique",
+  "splits": {
+    "train": {
+      "rows": 121892,
+      "users": 14681,
+      "items": 8687,
+      "min_time": 965779200,
+      "max_time": 1405987200
+    },
+    "dev": {
+      "rows": 14681,
+      "users": 14681,
+      "items": 5443,
+      "min_time": 1149206400,
+      "max_time": 1406073600,
+      "negative_counts": [
+        99
+      ],
+      "duplicate_negative_rows": 0,
+      "previously_clicked_negative_rows": 0,
+      "out_of_range_negative_rows": 0
+    },
+    "test": {
+      "rows": 14681,
+      "users": 14681,
+      "items": 5230,
+      "min_time": 1149206400,
+      "max_time": 1406073600,
+      "negative_counts": [
+        99
+      ],
+      "duplicate_negative_rows": 0,
+      "previously_clicked_negative_rows": 0,
+      "out_of_range_negative_rows": 0
+    }
+  },
+  "users": 14681,
+  "items": 8713,
+  "heldout_items_without_training": 26,
+  "users_with_complete_sequence": 14681,
+  "temporal_order_violations": 0
+}

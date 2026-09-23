@@ -1,0 +1,10 @@
+{
+  "source": "data\\Grocery_and_Gourmet_Food",
+  "negative_count": 99,
+  "seed": 2026,
+  "duplicate_negative_rows_in_source": {
+    "dev": 6336,
+    "test": 6363
+  },
+  "positive_rows_unchanged": true
+}

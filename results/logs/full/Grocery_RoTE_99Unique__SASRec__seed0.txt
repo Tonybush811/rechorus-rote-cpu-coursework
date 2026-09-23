@@ -1,0 +1,70 @@
+INFO:root:Namespace(model_name='SASRec', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2026-09-23 23:38:00 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_RoTE_99Un...
+ dropout            | 0                   
+ early_stop         | 3                   
+ emb_size           | 16                  
+ epoch              | 8                   
+ eval_batch_size    | 256                 
+ gpu                | -1                  
+ history_max        | 20                  
+ l2                 | 0.0                 
+ lr                 | 0.001               
+ main_metric        | NDCG@10             
+ num_heads          | 2                   
+ num_layers         | 1                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 0                   
+ test_all           | 0                   
+ topk               | 5,10                
+===========================================
+INFO:root:Device: cpu
+INFO:root:Load corpus from data/Grocery_RoTE_99Unique\SeqReader.pkl
+INFO:root:#params: 141184
+INFO:root:SASRec(
+  (i_embeddings): Embedding(8714, 16)
+  (p_embeddings): Embedding(21, 16)
+  (transformer_block): ModuleList(
+    (0): TransformerLayer(
+      (masked_attn_head): MultiHeadAttention(
+        (q_linear): Linear(in_features=16, out_features=16, bias=True)
+        (k_linear): Linear(in_features=16, out_features=16, bias=True)
+        (v_linear): Linear(in_features=16, out_features=16, bias=True)
+      )
+      (layer_norm1): LayerNorm((16,), eps=1e-05, elementwise_affine=True)
+      (dropout1): Dropout(p=0, inplace=False)
+      (linear1): Linear(in_features=16, out_features=16, bias=True)
+      (linear2): Linear(in_features=16, out_features=16, bias=True)
+      (layer_norm2): LayerNorm((16,), eps=1e-05, elementwise_affine=True)
+      (dropout2): Dropout(p=0, inplace=False)
+    )
+  )
+)
+INFO:root:Test Before Training: (HR@5:0.0428,NDCG@5:0.0251,HR@10:0.0914,NDCG@10:0.0405)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.5263 [10.1 s]	dev=(HR@10:0.3964,NDCG@10:0.2204) [0.5 s] *
+INFO:root:Epoch 2     loss=0.4142 [9.1 s]	dev=(HR@10:0.4547,NDCG@10:0.2566) [0.5 s] *
+INFO:root:Epoch 3     loss=0.3757 [9.4 s]	dev=(HR@10:0.4676,NDCG@10:0.2629) [0.5 s] *
+INFO:root:Epoch 4     loss=0.3459 [9.8 s]	dev=(HR@10:0.4686,NDCG@10:0.2708) [0.5 s] *
+INFO:root:Epoch 5     loss=0.3096 [9.0 s]	dev=(HR@10:0.4842,NDCG@10:0.2896) [0.5 s] *
+INFO:root:Epoch 6     loss=0.2717 [10.0 s]	dev=(HR@10:0.4904,NDCG@10:0.3034) [0.5 s] *
+INFO:root:Epoch 7     loss=0.2415 [9.6 s]	dev=(HR@10:0.4897,NDCG@10:0.3065) [0.5 s] *
+INFO:root:Epoch 8     loss=0.2140 [10.1 s]	dev=(HR@10:0.5015,NDCG@10:0.3164) [0.6 s] *
+INFO:root:
+Best Iter(dev)=    8	 dev=(HR@10:0.5015,NDCG@10:0.3164) [81.5 s] 
+INFO:root:Load model from C:/Users/Don.Penguin/Desktop/学习资料/机器学习/理论大作业/ReChorus/results/checkpoints/full/Grocery_RoTE_99Unique__SASRec__seed0.pt
+INFO:root:
+Dev  After Training: (HR@5:0.3935,NDCG@5:0.2814,HR@10:0.5015,NDCG@10:0.3164)
+INFO:root:
+Test After Training: (HR@5:0.3447,NDCG@5:0.2409,HR@10:0.4578,NDCG@10:0.2777)
+INFO:root:
+--------------------------------------------- END: 2026-09-23 23:39:24 ---------------------------------------------

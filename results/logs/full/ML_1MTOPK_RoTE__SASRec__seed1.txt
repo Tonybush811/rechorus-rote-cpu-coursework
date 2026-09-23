@@ -1,0 +1,70 @@
+INFO:root:Namespace(model_name='SASRec', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2026-09-23 23:58:13 ---------------------------------------------
+INFO:root:
+=====================================
+ Arguments          | Values         
+=====================================
+ batch_size         | 256           
+ data_appendix      |               
+ dataset            | ML_1MTOPK_RoTE
+ dropout            | 0             
+ early_stop         | 3             
+ emb_size           | 16            
+ epoch              | 8             
+ eval_batch_size    | 256           
+ gpu                | -1            
+ history_max        | 20            
+ l2                 | 0.0           
+ lr                 | 0.001         
+ main_metric        | NDCG@10       
+ num_heads          | 2             
+ num_layers         | 1             
+ num_neg            | 1             
+ num_workers        | 0             
+ optimizer          | Adam          
+ random_seed        | 1             
+ save_final_results | 0             
+ test_all           | 0             
+ topk               | 5,10          
+=====================================
+INFO:root:Device: cpu
+INFO:root:Load corpus from data/ML_1MTOPK_RoTE\SeqReader.pkl
+INFO:root:#params: 51776
+INFO:root:SASRec(
+  (i_embeddings): Embedding(3126, 16)
+  (p_embeddings): Embedding(21, 16)
+  (transformer_block): ModuleList(
+    (0): TransformerLayer(
+      (masked_attn_head): MultiHeadAttention(
+        (q_linear): Linear(in_features=16, out_features=16, bias=True)
+        (k_linear): Linear(in_features=16, out_features=16, bias=True)
+        (v_linear): Linear(in_features=16, out_features=16, bias=True)
+      )
+      (layer_norm1): LayerNorm((16,), eps=1e-05, elementwise_affine=True)
+      (dropout1): Dropout(p=0, inplace=False)
+      (linear1): Linear(in_features=16, out_features=16, bias=True)
+      (linear2): Linear(in_features=16, out_features=16, bias=True)
+      (layer_norm2): LayerNorm((16,), eps=1e-05, elementwise_affine=True)
+      (dropout2): Dropout(p=0, inplace=False)
+    )
+  )
+)
+INFO:root:Test Before Training: (HR@5:0.0557,NDCG@5:0.0331,HR@10:0.1046,NDCG@10:0.0488)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.3232 [69.2 s]	dev=(HR@10:0.5585,NDCG@10:0.3110) [0.3 s] *
+INFO:root:Epoch 2     loss=0.2298 [68.3 s]	dev=(HR@10:0.6531,NDCG@10:0.3935) [0.3 s] *
+INFO:root:Epoch 3     loss=0.1830 [62.3 s]	dev=(HR@10:0.7153,NDCG@10:0.4431) [0.3 s] *
+INFO:root:Epoch 4     loss=0.1589 [61.4 s]	dev=(HR@10:0.7408,NDCG@10:0.4737) [0.3 s] *
+INFO:root:Epoch 5     loss=0.1478 [63.9 s]	dev=(HR@10:0.7529,NDCG@10:0.4812) [0.3 s] *
+INFO:root:Epoch 6     loss=0.1388 [62.2 s]	dev=(HR@10:0.7620,NDCG@10:0.4933) [0.3 s] *
+INFO:root:Epoch 7     loss=0.1341 [61.2 s]	dev=(HR@10:0.7655,NDCG@10:0.4971) [0.3 s] *
+INFO:root:Epoch 8     loss=0.1312 [61.1 s]	dev=(HR@10:0.7744,NDCG@10:0.5048) [0.3 s] *
+INFO:root:
+Best Iter(dev)=    8	 dev=(HR@10:0.7744,NDCG@10:0.5048) [512.1 s] 
+INFO:root:Load model from C:/Users/Don.Penguin/Desktop/学习资料/机器学习/理论大作业/ReChorus/results/checkpoints/full/ML_1MTOPK_RoTE__SASRec__seed1.pt
+INFO:root:
+Dev  After Training: (HR@5:0.6309,NDCG@5:0.4581,HR@10:0.7744,NDCG@10:0.5048)
+INFO:root:
+Test After Training: (HR@5:0.6028,NDCG@5:0.4400,HR@10:0.7435,NDCG@10:0.4857)
+INFO:root:
+--------------------------------------------- END: 2026-09-24 00:06:48 ---------------------------------------------
