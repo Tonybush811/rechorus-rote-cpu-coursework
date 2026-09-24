@@ -40,7 +40,7 @@ def styles(font):
                                   leading=19, spaceBefore=15, spaceAfter=8,
                                   keepWithNext=True),
         'body': ParagraphStyle('body', fontName=font, fontSize=10.3,
-                               leading=17, alignment=TA_JUSTIFY, spaceAfter=8,
+                               leading=16.5, alignment=TA_JUSTIFY, spaceAfter=8,
                                splitLongWords=False, wordWrap='CJK'),
         'table': ParagraphStyle('table', fontName=font, fontSize=8.2,
                                 leading=12, wordWrap='CJK'),
